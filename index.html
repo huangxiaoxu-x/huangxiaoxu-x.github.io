@@ -3,27 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ceshi</title>
+    <title>相册</title>
     <style>
-        #testDiv {
-            height: 999px;
-            overflow: scroll;
-            background: pink;   
-            text-align: center;
-            line-height: 300px;
+        * {
+            margin:0;
+            padding:0;
+            font-size:0;
+        }
+        html,body {
+            width:100%;
+            height:100%;
+            display:flex;
+            display:-webkit-flex;
+            background:-webkit-radial-gradient(#490338 10%,#000);
+            perspective:900px;
+            overflow:hidden;
+        }
+        #album {
+            width:133px;
+            height:200px;
+            margin:auto;
+            position:relative;
+            transform-style:preserve-3d;
+            transform:rotateX(-20deg);
+        }
+        #album img {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            /* 反射倒影 距离下面5px  */
+                    -webkit-box-reflect:below 5px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5));
+        }
+        #album p {
+            position:absolute;
+            left:calc(133px/2 - 800px/2);
+            top:calc(200px/2 - 800px/2);
+            width:800px;
+            height:800px;
+            background:rgba(255,255,255,0.1);
+            transform:translateY(100px) rotateX(90deg);
+            border-radius:50%;
         }
     </style>
 </head>
 <body>
-    <div id="testDiv">
-        请向下滚动
+    <div id="album">
+        <img src="http://www.jq22.com/img/cs/500x500-1.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-2.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-3.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-4.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-5.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-6.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-7.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-8.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-9.png" alt="">
+        <img src="http://www.jq22.com/img/cs/500x500-1.png" alt="">
+        <p></p>
     </div>
-    <script>
-        window.onload = function(){
-            document.getElementsByTagName("body")[0].onscroll = function() {
-                alert('你滚动了元素')
-            };
-        }
-    </script>
 </body>
 </html>
